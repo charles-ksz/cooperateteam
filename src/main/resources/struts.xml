@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <constant name="struts.i18n.encoding" value="UTF-8"></constant>
+
+    <package name="basicstruts" extends="struts-default">
+        <action name="login" class="com.dhu.action.LoginAction">
+            <result name="success">/Product/success.jsp</result>
+            <result name="error">/Product/error.jsp</result>
+            <result name="input">/Product/edit.jsp</result>
+        </action>
+        <action name="register" class="com.dhu.action.RegisterAction">
+            <result name="success"> /Product/login.jsp</result>
+        </action>
+
+        <action name="addBaseinformation" class="com.dhu.action.BaseinformationAction"    method="add">
+            <result name="list" type="redirect">listBaseinformation.action</result>
+        </action>
+        <action name="deleteBaseinformation" class="com.dhu.action.BaseinformationAction" method="delete">
+            <result name="list" type="redirect">listBaseinformation.action</result>
+        </action>
+        <action name="editBaseinformation"    class="com.dhu.action.BaseinformationAction" method="edit">
+            <result name="edit">/Product/edit.jsp</result>
+        </action>
+        <action name="updateBaseinformation" class="com.dhu.action.BaseinformationAction" method="update">
+            <result name="list" type="redirect" >listBaseinformation.action</result>
+        </action>
+        <action name="listBaseinformation" class="com.dhu.action.BaseinformationAction" method="list">
+            <result name="listJsp">/Product/success.jsp</result>
+        </action>
+
+        <action name="addT" class="com.dhu.action.TeacherAction" method="add">
+        <result name="input" >listT.action</result>
+        </action>
+        <action name="listT" class="com.dhu.action.TeacherAction" method="list">
+            <result name="listJsp" >/Product/success.jsp</result>
+        </action>
+        <action name="updateT" class="com.dhu.action.TeacherAction" method="update">
+        <result name="list" type="redirect" >listT.action</result>
+    </action>
+        <action name="editT"    class="com.dhu.action.TeacherAction" method="edit">
+            <result name="edit">/Product/edit.jsp</result>
+        </action>
+        <action name="deleteT" class="com.dhu.action.TeacherAction" method="delete">
+            <result name="list" type="redirect">listT.action</result>
+        </action>
+    </package>
+</struts>

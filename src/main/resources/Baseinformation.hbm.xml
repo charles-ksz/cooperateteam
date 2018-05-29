@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <!-- 配置PO对象与数据库中表的对应关系使用class元素，name配置PO对象对应的类，
+    table配置该PO对象在数据库中对应的表名，catalog配置表对应的数据库名 -->
+    <class name="com.dhu.pojo.Baseinformation" table="baseinformation" schema="test">
+        <id name="id" column="id"/>
+        <property name="name" column="name"/>
+        <property name="studentNumber" column="studentNumber"/>
+        <property name="sex" column="sex"/>
+        <property name="phoneNumber" column="phoneNumber"/>
+        <property name="mailAccount" column="mailAccount"/>
+        <property name="school" column="school"/>
+        <property name="academy" column="academy"/>
+        <property name="password" column="password"/>
+    </class>
+</hibernate-mapping>

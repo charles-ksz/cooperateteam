@@ -1,0 +1,31 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">
+            jdbc:mysql://localhost:3306/test?useUnicode=true&amp;characterEncoding=utf-8&amp;serverTimezone=UTC
+
+        </property>
+        <property name="connection.username">conn</property>
+        <property name="connection.password"></property>
+        <!-- 指定数据库的方言 -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+
+
+
+        <mapping class="com.dhu.pojo.Baseinformation"/>
+      <mapping resource="Baseinformation.hbm.xml"/>
+      <mapping class="com.dhu.pojo.Relationship"/>
+      <mapping resource="Relationship.hbm.xml"/>
+      <mapping class="com.dhu.pojo.Student"/>
+      <mapping resource="Student.hbm.xml"/>
+      <mapping class="com.dhu.pojo.Teacher"/>
+      <mapping resource="Teacher.hbm.xml"/>
+
+
+  </session-factory>
+</hibernate-configuration>
